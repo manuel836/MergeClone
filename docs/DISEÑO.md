@@ -1,6 +1,6 @@
-# Diseño: puente Galaxy Watch 7 ↔ iPhone
+# Diseño: Tándem (puente Galaxy Watch 7 ↔ iPhone)
 
-Estado: **borrador para tu aprobación** · 2026-11-25
+Estado: **aprobado por el usuario el 2026-11-25** · nombre elegido: **Tándem**
 Insumos: `replica/recon.md`, `replica/fixes.md`, `replica/architecture.md`, `replica/design/`, `docs/investigacion/plataformas-2026-11-25.md`.
 
 ## 1. Intención
@@ -105,7 +105,7 @@ Como no habrá pruebas reales hasta completar todo, la verificación descansa en
 3. **Simulador de enlace de punta a punta en el CI**: la lógica del reloj corre en la JVM y la de `ios/Core` en Swift sobre Linux, conectadas por un transporte de prueba (socket local) que implementa la misma interfaz que el BLE real, con MTU pequeño, pérdidas, desconexiones y reenvíos inyectados. Prueba flujos completos: pulso → cola → envío → "escritura en Salud" simulada → ACK; reconexión; duplicados.
 Lo que ninguna simulación cubre (radio real, cifrado y vinculación, permisos de iOS/Wear OS, ANCS/AMS reales, segundo plano, batería, firma) queda en `docs/PRUEBAS.md` con pasos exactos.
 
-**Mi recomendación:** aunque el resto espere, haz al inicio una sola prueba real de 5 minutos: instalar el IPA de la fase 0 firmado con FlekStore y tocar "Probar HealthKit". Si tu certificado no incluye HealthKit, las fases 2 y 3 no sirven tal como están, y es mejor saberlo antes de construirlas. Si prefieres no hacerlo, sigo y ese riesgo queda abierto hasta el final.
+**Acordado:** el usuario hará al inicio una sola prueba real de 5 minutos: instalar el IPA de la fase 0 firmado con FlekStore y tocar "Probar HealthKit". Si tu certificado no incluye HealthKit, las fases 2 y 3 no sirven tal como están, y es mejor saberlo antes de construirlas. Por eso el plan de la fase 0 entrega primero el IPA con esa prueba.
 
 ## 6. Fases
 Como las definiste (0 a 5), cada una en su rama y PR. **Cambio por tu decisión de no probar en dispositivos hasta el final:** cada fase se cierra con CI y verify.sh en verde, revisión y escaneo de ECC y un Release con APK e IPA; no espero tu OK de dispositivos entre fases, sino que sigo con la siguiente. Las pruebas reales de todas las fases se hacen al final con `docs/PRUEBAS.md`. Los Releases por fase se marcan como *pre-release*. Fase 0 = cimientos, CI, keystore, `docs/INSTALACION.md`, pulso en vivo a Salud y las pruebas de viabilidad (HealthKit con tu firma, reconexión en segundo plano, ANCS/AMS desde el Galaxy, estado dormido en Health Services) → `docs/INVESTIGACION.md`.
@@ -120,7 +120,7 @@ Tres propuestas (ninguna contiene "Merge"; uso personal, sin búsqueda de marcas
 1. **Lazo** — corto, en español, "lo que une".
 2. **Tándem** — dos que trabajan juntos.
 3. **Órbita** — el reloj gira alrededor del teléfono.
-Elige uno; mientras tanto el código usa el identificador neutro `bridge` (paquete `dev.personal.bridge`, bundle `dev.personal.bridge`).
+**Elegido: Tándem.** Nombre visible "Tándem"; identificadores sin acento: paquete Android y bundle iOS `dev.personal.tandem`.
 
 ## 8. Lo que queda a criterio del constructor
 Reglas exactas de sesiones de sueño, intervalos de reintento, formato interno de payloads por tipo, diseño visual fino de cada pantalla, estructura de módulos Gradle. Cada decisión se anota en `docs/DECISIONES.md`.
