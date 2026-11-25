@@ -1,0 +1,8 @@
+# Normalize line endings; shell scripts must stay LF so Git Bash on Windows and CI agree.
+* text=auto
+*.sh text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jks binary
+*.keystore binary
