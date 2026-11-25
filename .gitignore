@@ -1,0 +1,32 @@
+# Secrets: never commit keystores or signing material
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+keystore.properties
+local.properties
+.env*
+
+# Build outputs
+build/
+.gradle/
+*.apk
+*.aab
+*.ipa
+ios/**/*.xcodeproj/
+DerivedData/
+.build/
+.swiftpm/
+
+# Editors / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Claude local settings
+.claude/settings.local.json
+
+# replica reference screenshots of the original app: never shipped
+replica/screens/
