@@ -1,0 +1,29 @@
+feature,area,priority,original,clone,notes
+Notificaciones de todas las apps del iPhone,notificaciones,must,yes,no,ANCS; fase 1
+Filtro de notificaciones por app,notificaciones,must,yes,no,configurable desde el iPhone; fase 1
+Descartar notificación desde el reloj,notificaciones,must,yes,no,acción negativa de ANCS; fase 1
+Aceptar o rechazar llamadas,llamadas,must,yes,no,acciones de ANCS sobre la llamada entrante; fase 1
+Pulso a Apple Salud,salud,must,yes,no,fase 0 (esqueleto)
+Entrenamientos con pulso/distancia/calorías/ritmo,salud,must,yes,no,HKWorkout; fase 2
+Ruta GPS del entrenamiento,salud,must,yes,no,HKWorkoutRoute; fase 2
+Sueño a Apple Salud,salud,must,no,no,requisito propio (Merge no lo anuncia); fase 3
+Pasos/distancia/pisos/calorías del día,salud,must,yes,no,fase 3
+Reconexión automática en segundo plano,conexión,must,partial,no,Merge pierde el enlace si se cierra la app; fase 0
+Emparejamiento cifrado con código de 6 dígitos,conexión,must,yes,no,LE Secure Connections; fase 0
+Control de música,música,should,yes,no,AMS; fase 4
+Contactos / identificador de llamada,llamadas,should,yes,no,nombre en llamada entrante; fase 4
+Buscar iPhone (hacerlo sonar),buscar,should,yes,no,fase 4
+Buscar reloj desde el iPhone,buscar,should,yes,no,fase 4
+Disparador de cámara,cámara,could,yes,no,Merge: solo con la app Cámara abierta; fase 4
+Llamadas con audio en el reloj,llamadas,could,yes,no,Merge: solo Samsung; probablemente HFP; viabilidad por investigar; fase 4
+App de entrenamiento con anillos/metas/rachas,salud,could,yes,no,Merge v3.0; tile y complicación
+Tile y complicación de estado,reloj,could,yes,no,
+Siri desde el reloj,asistente,could,yes,no,probablemente no viable sin APIs privadas; evaluar
+Fases de sueño estimadas,salud,could,no,no,fase 5 opcional
+Instalador inalámbrico desde el iPhone,instalación,could,yes,no,fase 5 opcional
+Log exportable y pantalla de estado,diagnóstico,must,no,no,requisito propio (sin Mac)
+Suscripción y paywall,negocio,skip,yes,no,no aplica: uso personal
+Relé por internet,conexión,skip,partial,no,no aplica: sin servidores (y Merge solo lo usa con Apple Watch)
+Un reloj y dos teléfonos,conexión,skip,yes,no,fuera de alcance por decisión del usuario
+Apple Watch con Android,plataforma,skip,yes,no,fuera de alcance
+Responder notificaciones,notificaciones,skip,no,no,Merge no lo ofrece en Wear OS; ANCS no lo permite
