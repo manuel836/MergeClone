@@ -3,7 +3,7 @@
 ## Objetivo
 Puente directo por Bluetooth LE entre un Galaxy Watch 7 (Wear OS) y un iPhone 15 Pro Max, de uso personal:
 notificaciones, entrenamientos, sueño y métricas a Apple Salud, y el resto de funciones tipo Merge.
-Sin servidores, cuentas, cobros, tiendas ni telemetría. Nombre del producto: pendiente (ver docs/DISEÑO.md).
+Sin servidores, cuentas, cobros, tiendas ni telemetría. Nombre del producto: **Tándem** (identificadores `dev.personal.tandem`). Diseño aprobado: `docs/DISEÑO.md`.
 
 ## Reglas
 - Todo lo que lee el usuario (UI, docs, mensajes, commits de cara a él, PRs) va en **español**; el código, identificadores y comentarios técnicos, en **inglés**. El usuario no sabe Kotlin ni Swift: comenta el porqué.
